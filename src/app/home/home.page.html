@@ -9,7 +9,7 @@
 <ion-content padding>
   Bem vindo ao app de cerveja, mais famoso do Brasil.
   <h2>Conheça nossas cervejas</h2>
-  <ion-button expand="block" color="warning" href="/puro-malte">Puro Malte</ion-button>
-  <ion-button expand="block" color="danger" href="/pilsen">Pilsen</ion-button>
-  <ion-button expand="block" color="secondary">Lager</ion-button>
+  <ion-button expand="block" color="warning" [routerLink]="['/puro-malte']">Puro Malte</ion-button>
+  <ion-button expand="block" color="danger" [routerLink]="['/pilsen']">Pilsen</ion-button>
+  <ion-button expand="block" color="secondary" [routerLink]="['/lager']">Lager</ion-button>
 </ion-content>
