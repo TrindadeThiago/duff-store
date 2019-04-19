@@ -17,6 +17,21 @@
       <ion-label color='danger' position='floating'>Descrição:</ion-label>
       <ion-textarea name='descricao' ngModel></ion-textarea>
     </ion-item>
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          Tipo
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Puro Malte</ion-label>
+          <ion-radio slot='end' value='Puro Malte'></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Lager</ion-label>
+            <ion-radio slot='end' value='Lager'></ion-radio>
+          </ion-item>
+      </ion-radio-group>
+    </ion-list>
       <ion-button type='submit' color='danger'>
         Salvar 
           <ion-icon name='checkmark-circle'></ion-icon>
