@@ -15,23 +15,21 @@ export class HomePage implements OnInit {
 
   ngOnInit() {}
 
+  excluir(nome) {
+    localStorage.removeItem(nome);
+  }
+
   ionViewDidEnter() {
 
     this.cervejas = [];
 
-    const chavesDisponiveis = sessionStorage.getItem('chaves');
+    const tamanhoDB = localStorage.length;
 
-    if(chavesDisponiveis !== null) {
-      const chavesSeparadas = chavesDisponiveis.split(';');
+    for (let index = 0; index < tamanhoDB.length; index++) {
+      const key = localStorage.key(index);
+      const cerveja = localStorage.getItem(key);
+      const cervejaReal = JSON.parse(cerveja);
 
-      for (let i = 0; i < chavesSeparadas.length; i++) {
-        const cerveja = sessionStorage.getItem(chavesSeparadas[i]);
-
-        const cervejaObj = JSON.parse(cerveja);
-
-        this.cervejas.push(cervejaObj);
-
-      }
     }
   }
 }

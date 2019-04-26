@@ -20,12 +20,16 @@
           <ion-card-content>
               <h2>{{cerveja.nome}}</h2>
               <p> {{cerveja.descricao}} </p>
+              <p style="text-align: right">
+                <ion-button color='danger' size='small' (click)="excluir(cerveja.nome)"><ion-icon name='trash' ></ion-icon></ion-button>
+              </p>
           </ion-card-content>
         </ion-card>
     </div>
   </div>
-  <div >
-
+  <div *ngIf="cervejas.length === 0">
+    <p>Ainda não há cervejas cadastradas.</p>
+    <ion-button [routerLink]='["/add-cerveja"]'>Cadastrar agora</ion-button>
   </div>
 
 </ion-content>

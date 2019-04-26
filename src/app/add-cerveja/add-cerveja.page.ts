@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-cerveja',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCervejaPage implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private nav:NavController) { }
 
   ngOnInit() {
     this.mensagem = '';
@@ -18,24 +19,10 @@ export class AddCervejaPage implements OnInit {
     const cervejaString = JSON.stringify(form.value);
     const nomeCerveja = form.value.nome;
 
-    sessionStorage.setItem(nomeCerveja, cervejaString);
-
-    let chavesDisponiveis = sessionStorage.getItem('chaves');
-
-    if(chavesDisponiveis !== null) {
-      chavesDisponiveis = chavesDisponiveis + ';' + nomeCerveja;
-    } else {
-      chavesDisponiveis = nomeCerveja;
-    }
-
-    Location;
-    sessionStorage.setItem('chaves', chavesDisponiveis);
+    localStorage.setItem(nomeCerveja, cervejaString);
 
     form.reset();
-    this.mensagem = 'Cadastrado com sucesso';
 
-    console.log('As chaves disponiveis são: ', chavesDisponiveis);
-
-   this.location.back();
+    this.nav.back();
   }
 }
