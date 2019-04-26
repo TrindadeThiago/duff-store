@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCervejaPage implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
     this.mensagem = '';
@@ -28,12 +28,14 @@ export class AddCervejaPage implements OnInit {
       chavesDisponiveis = nomeCerveja;
     }
 
+    Location;
     sessionStorage.setItem('chaves', chavesDisponiveis);
 
     form.reset();
     this.mensagem = 'Cadastrado com sucesso';
 
     console.log('As chaves disponiveis são: ', chavesDisponiveis);
-  }
 
+   this.location.back();
+  }
 }

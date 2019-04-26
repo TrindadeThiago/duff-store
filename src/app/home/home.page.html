@@ -13,13 +13,19 @@
 
 <ion-content padding>
   <h6>Bem vindo ao app de cerveja, mais famoso do Brasil.</h6>
-  <h2>Conheça nossas cervejas</h2>
-  <div *ngFor="let cerveja of cervejas">
-    <ion-card>
-        <ion-card-content>
-            <h2>{{cerveja.nome}}</h2>
-            <p> {{cerveja.descricao}} </p>
-        </ion-card-content>
-      </ion-card>
+  <div *ngIf="cervejas.length > 0">
+    <h2>Conheça nossas cervejas</h2>
+    <div *ngFor="let cerveja of cervejas">
+      <ion-card>
+          <ion-card-content>
+              <h2>{{cerveja.nome}}</h2>
+              <p> {{cerveja.descricao}} </p>
+          </ion-card-content>
+        </ion-card>
+    </div>
   </div>
+  <div >
+
+  </div>
+
 </ion-content>
