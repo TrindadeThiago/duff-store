@@ -16,7 +16,7 @@
   <div *ngIf="cervejas.length > 0">
     <h2>Conheça nossas cervejas</h2>
     <div *ngFor="let cerveja of cervejas">
-      <ion-card>
+      <ion-card (click)="detalhes(cerveja.nome)">
           <ion-card-content>
               <h2>{{cerveja.nome}}</h2>
               <p> {{cerveja.descricao}} </p>
